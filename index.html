@@ -1,0 +1,1627 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4ed">
+  <meta name="description" content="Vishesh Shah — 1st Year CSE at Vellore Institute of Technology. 1st Place Winner at VINHACK 2026 as a fresher. Portfolio featuring live UIs and hackathon innovations (Furti AI, ImmuneFleet, Formora AI, Watch Party).">
+  <title>Vishesh Shah — Developer Portfolio | 1st Place Winner at VINHACK | VIT Vellore</title>
+  <style>
+    :root {
+      /* Warm Brown and Cream Palette */
+      --bg: #f7f4ed;
+      --bg-alt: #f1ebdE;
+      --bg-cream-light: #fffdf9;
+      --panel: rgba(255, 255, 255, 0.92);
+      --panel-solid: #ffffff;
+      --panel-warm: #faf6ef;
+      
+      --text: #241710;
+      --text-secondary: #5a4b41;
+      --muted: #78685c;
+      --line: rgba(74, 46, 27, 0.12);
+      --line-strong: rgba(74, 46, 27, 0.22);
+      
+      --brown-deep: #2a170e;
+      --brown-rich: #3f2517;
+      --brown-warm: #5c3722;
+      --caramel: #b56b37;
+      --caramel-soft: #f4e8dc;
+      --amber: #944d1e;
+      --gold: #d48b38;
+      --green: #2c6e49;
+      
+      --max: 1140px;
+      --radius: 22px;
+      --radius-sm: 14px;
+      --shadow-sm: 0 4px 18px rgba(42, 23, 14, 0.05);
+      --shadow-md: 0 12px 34px rgba(42, 23, 14, 0.08);
+      --shadow-lg: 0 22px 55px rgba(42, 23, 14, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+    body {
+      margin: 0; color: var(--text); background:
+      radial-gradient(ellipse at 12% 0%, rgba(181, 107, 55, 0.10), transparent 45%),
+      radial-gradient(ellipse at 95% 25%, rgba(92, 55, 34, 0.07), transparent 38%),
+      radial-gradient(circle at 50% 80%, rgba(244, 232, 220, 0.6), transparent 50%),
+      var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.65; overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 44px)); margin: auto; }
+
+    /* Navigation */
+    .nav-shell { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(16px); background: rgba(247, 244, 237, 0.88); border-bottom: 1px solid var(--line); }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 850; letter-spacing: -.05em; font-size: 1.18rem; color: var(--brown-deep); }
+    .brand span { color: var(--caramel); }
+    .nav-links { display: flex; gap: 24px; align-items: center; color: var(--text-secondary); font-size: .92rem; font-weight: 600; }
+    .nav-links a:hover, .text-link:hover { color: var(--brown-deep); }
+    .menu-toggle { display: none; border: 1px solid var(--line-strong); color: var(--text); background: var(--panel-solid); padding: 8px 14px; border-radius: 12px; font-weight: 700; cursor: pointer; }
+
+    /* Typography & Headers */
+    .kicker { color: var(--caramel); text-transform: uppercase; font-size: .8rem; font-weight: 800; letter-spacing: .14em; }
+    h1 { font-size: clamp(3.1rem, 6.8vw, 5.8rem); line-height: 1.02; letter-spacing: -.065em; margin: 20px 0 18px; color: var(--brown-deep); font-weight: 900; }
+    h2 { margin: 8px 0 0; font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.12; letter-spacing: -.05em; color: var(--brown-deep); font-weight: 850; }
+    h3 { margin: 10px 0 8px; font-size: 1.35rem; letter-spacing: -.035em; color: var(--brown-deep); }
+    .gradient-title {
+      background: linear-gradient(115deg, #241710 15%, #6e371b 60%, #b56b37 98%);
+      -webkit-background-clip: text; color: transparent; background-clip: text;
+    }
+    .hero-lead { color: var(--text-secondary); font-size: clamp(1.1rem, 2.1vw, 1.32rem); max-width: 660px; line-height: 1.5; font-weight: 500; }
+    .hero-copy { color: var(--muted); max-width: 620px; margin-top: 14px; font-size: 1rem; }
+    .section-intro { color: var(--text-secondary); max-width: 600px; margin: 0; font-size: 1.02rem; }
+
+    /* Buttons */
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 22px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 1px solid var(--line-strong); border-radius: 14px; padding: 12px 19px; font-weight: 750; font-size: .93rem; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease, background .2s ease; cursor: pointer; }
+    .btn:hover { transform: translateY(-3px); }
+    .btn-primary { color: #fffdf9; border-color: transparent; background: linear-gradient(115deg, var(--brown-deep), var(--brown-warm)); box-shadow: 0 8px 24px rgba(42, 23, 14, 0.18); }
+    .btn-primary:hover { box-shadow: 0 12px 30px rgba(42, 23, 14, 0.28); }
+    .btn-secondary { background: var(--panel-solid); color: var(--text); border-color: var(--line-strong); box-shadow: var(--shadow-sm); }
+    .btn-secondary:hover { border-color: var(--caramel); background: var(--panel-warm); }
+    .socials { display: flex; flex-wrap: wrap; gap: 18px; color: var(--muted); font-size: .9rem; font-weight: 600; }
+    .socials a { border-bottom: 1.5px solid rgba(74, 46, 27, 0.25); padding-bottom: 2px; }
+    .socials a:hover { color: var(--caramel); border-color: var(--caramel); }
+
+    /* Badges & Pills */
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--brown-warm); border: 1px solid rgba(181, 107, 55, 0.3); background: rgba(181, 107, 55, 0.08); padding: 7px 14px; border-radius: 999px; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; font-weight: 800; flex-wrap: wrap; }
+    .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px var(--green); }
+    .badge-group { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; align-items: center; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 999px; font-size: .74rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; border: 1px solid var(--line); }
+    .badge-gold { background: rgba(181, 107, 55, 0.14); color: #8a481c; border-color: rgba(181, 107, 55, 0.4); }
+    .badge-brown { background: rgba(63, 37, 23, 0.08); color: var(--brown-deep); border-color: rgba(63, 37, 23, 0.22); }
+    .badge-amber { background: rgba(148, 77, 30, 0.10); color: var(--amber); border-color: rgba(148, 77, 30, 0.28); }
+    .badge-green { background: rgba(44, 110, 73, 0.10); color: var(--green); border-color: rgba(44, 110, 73, 0.3); }
+
+    /* Space Switcher Tabs */
+    .space-nav-pill-group {
+      display: inline-flex;
+      gap: 8px;
+      background: var(--bg-alt);
+      padding: 6px;
+      border-radius: 16px;
+      border: 1px solid var(--line-strong);
+      margin-bottom: 28px;
+    }
+    .space-pill {
+      padding: 9px 18px;
+      border-radius: 12px;
+      font-size: .88rem;
+      font-weight: 750;
+      color: var(--text-secondary);
+      transition: all .2s ease;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .space-pill:hover { color: var(--brown-deep); background: rgba(255,255,255,0.6); }
+    .space-pill.active {
+      background: var(--panel-solid);
+      color: var(--brown-deep);
+      border: 1px solid var(--line-strong);
+      box-shadow: 0 4px 14px rgba(42, 23, 14, 0.07);
+    }
+
+    /* Cards & Layout */
+    section { padding: 80px 0; }
+    .section-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 34px; }
+    .grid { display: grid; gap: 24px; }
+    .projects-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel-solid);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(181, 107, 55, 0.4);
+      box-shadow: var(--shadow-md);
+    }
+    .card p { color: var(--text-secondary); margin: 0 0 16px; }
+
+    /* First Page: Introductions & Demo Avatar Hero */
+    .hero {
+      min-height: 700px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 50px;
+      align-items: center;
+      padding-top: 50px;
+      padding-bottom: 80px;
+    }
+    
+    /* Academic Info Bar */
+    .academic-chips {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 24px 0 22px;
+      max-width: 620px;
+    }
+    .acad-chip {
+      background: var(--panel-warm);
+      border: 1px solid var(--line-strong);
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      box-shadow: var(--shadow-sm);
+    }
+    .acad-chip-icon {
+      font-size: 1.3rem;
+      line-height: 1;
+      padding: 6px;
+      background: rgba(181, 107, 55, 0.12);
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .acad-chip-text small {
+      display: block;
+      color: var(--muted);
+      font-size: .74rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: .05em;
+    }
+    .acad-chip-text strong {
+      display: block;
+      color: var(--brown-deep);
+      font-size: .92rem;
+      font-weight: 750;
+      margin-top: 2px;
+    }
+
+    /* Real Profile Photo Visual Showcase */
+    .avatar-showcase {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .avatar-frame-orbit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(min(320px, 80vw) + 24px);
+      height: calc(min(320px, 80vw) + 24px);
+      border-radius: 50%;
+      border: 2px dashed rgba(181, 107, 55, 0.35);
+      pointer-events: none;
+      animation: spinOrbit 50s linear infinite;
+    }
+    @keyframes spinOrbit {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    .avatar-frame {
+      width: min(320px, 80vw);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ebd7bf;
+      border: 4px solid rgba(181, 107, 55, 0.45);
+      box-shadow: 0 18px 48px rgba(58, 33, 20, 0.16), 0 0 0 4px rgba(255, 255, 255, 0.85);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform .35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .35s ease;
+      z-index: 1;
+    }
+    .avatar-frame:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 24px 55px rgba(58, 33, 20, 0.24), 0 0 0 4px rgba(255, 255, 255, 0.95);
+    }
+    .profile-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform .45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .avatar-frame:hover .profile-photo-img {
+      transform: scale(1.06);
+    }
+    .photo-zoom-badge {
+      position: absolute;
+      bottom: 14px;
+      background: rgba(36, 23, 16, 0.82);
+      color: #fff9f3;
+      backdrop-filter: blur(8px);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 650;
+      letter-spacing: .02em;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .3s ease, transform .3s ease;
+      pointer-events: none;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+    .avatar-frame:hover .photo-zoom-badge {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .float-card {
+      position: absolute;
+      border: 1px solid var(--line-strong);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 11px 15px;
+      box-shadow: var(--shadow-md);
+      font-size: .84rem;
+      z-index: 2;
+    }
+    .float-card strong { display: block; font-size: .92rem; color: var(--brown-deep); }
+    .float-card small { color: var(--muted); font-weight: 600; }
+    .fc-one { top: 4%; right: -6%; }
+    .fc-two { bottom: 12%; left: -8%; }
+    .fc-three { bottom: -4%; right: 4%; }
+
+    /* Things About Me Section */
+    .about-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .about-feature {
+      background: var(--panel-solid);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow-sm);
+      transition: transform .22s ease, border-color .22s ease;
+    }
+    .about-feature:hover {
+      transform: translateY(-3px);
+      border-color: rgba(181, 107, 55, 0.4);
+    }
+    .about-feature-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(181, 107, 55, 0.12);
+      color: var(--caramel);
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      margin-bottom: 14px;
+    }
+    .about-feature h3 { font-size: 1.15rem; margin: 0 0 8px; color: var(--brown-deep); }
+    .about-feature p { color: var(--text-secondary); margin: 0; font-size: .92rem; line-height: 1.6; }
+
+    /* Featured Hackathon Cards */
+    .featured-hack-card {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap: 36px;
+      align-items: center;
+      background: linear-gradient(140deg, #ffffff 0%, #fdfbf7 50%, #f8f1e6 100%);
+      border: 1px solid rgba(181, 107, 55, 0.32);
+      border-radius: 26px;
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    .featured-hack-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--caramel), var(--brown-deep));
+    }
+    .featured-winner-card {
+      border: 1.5px solid rgba(212, 139, 56, 0.45);
+      box-shadow: 0 16px 45px rgba(181, 107, 55, 0.12);
+    }
+    .featured-winner-card::before {
+      background: linear-gradient(90deg, #f59e0b, #eab308, #b56b37, #3f2517);
+      height: 5px;
+    }
+    .project-quote {
+      margin: 12px 0 16px;
+      padding: 12px 18px;
+      border-left: 4px solid var(--caramel);
+      background: rgba(181, 107, 55, 0.08);
+      border-radius: 0 14px 14px 0;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--brown-rich);
+      font-weight: 600;
+    }
+    .project-points {
+      margin: 18px 0 22px;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .project-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: .9rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+    .project-points .bullet {
+      color: var(--caramel);
+      font-weight: 900;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+    .project-points strong { color: var(--brown-deep); }
+
+    /* Interactive Project Media Showcase (UI Screenshots & Certificates) */
+    .project-media-showcase {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .media-tab-group {
+      display: inline-flex;
+      gap: 6px;
+      background: rgba(74, 46, 27, 0.07);
+      padding: 4px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      align-self: flex-start;
+      flex-wrap: wrap;
+    }
+    .media-tab-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: .78rem;
+      font-weight: 750;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all .2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .media-tab-btn:hover {
+      color: var(--brown-deep);
+      background: rgba(255, 255, 255, 0.6);
+    }
+    .media-tab-btn.active {
+      background: var(--panel-solid);
+      color: var(--brown-deep);
+      box-shadow: 0 2px 8px rgba(42, 23, 14, 0.08);
+      border-color: var(--line-strong);
+    }
+    .media-display-card {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      background: #ffffff;
+      box-shadow: var(--shadow-md);
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+      cursor: pointer;
+    }
+    .media-display-card:hover {
+      transform: translateY(-4px) scale(1.01);
+      border-color: var(--caramel);
+      box-shadow: 0 20px 45px rgba(58, 33, 20, 0.16);
+    }
+    .media-img-wrap {
+      position: relative;
+      width: 100%;
+      background: #180f0a;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .media-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform .35s ease, filter .3s ease;
+    }
+    .media-display-card:hover .media-img-wrap img {
+      transform: scale(1.03);
+    }
+    .media-zoom-pill {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(181, 107, 55, 0.35);
+      padding: 4px 11px;
+      border-radius: 999px;
+      font-size: .74rem;
+      font-weight: 800;
+      color: var(--brown-deep);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 4px 12px rgba(42, 23, 14, 0.12);
+      z-index: 2;
+    }
+    .media-card-footer {
+      padding: 14px 18px;
+      background: #fffdfa;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .media-footer-title {
+      font-weight: 800;
+      font-size: .95rem;
+      margin: 0;
+      color: var(--brown-deep);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .media-footer-desc {
+      font-size: .8rem;
+      color: var(--muted);
+      margin: 0;
+    }
+    .media-quick-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+      font-size: .82rem;
+      flex-wrap: wrap;
+    }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 20px; }
+    .tag { font-size: .76rem; color: var(--brown-warm); border: 1px solid rgba(181, 107, 55, 0.25); border-radius: 8px; padding: 5px 10px; background: rgba(181, 107, 55, 0.08); font-weight: 600; }
+    .text-link { display: inline-flex; align-items: center; gap: 7px; color: var(--brown-deep); font-weight: 750; font-size: .92rem; }
+    .text-link:hover { color: var(--caramel); }
+
+    /* Certificates Grid & Thumbnails */
+    .cert-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+    .cert-card { display: flex; flex-direction: column; min-height: 290px; }
+    .cert-card-thumb {
+      height: 125px;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 14px;
+      border: 1px solid var(--line-strong);
+      background: #faf6ef;
+      cursor: pointer;
+    }
+    .cert-card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform .3s ease;
+    }
+    .cert-card:hover .cert-card-thumb img { transform: scale(1.06); }
+    .cert-card-thumb .cert-thumb-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(6px);
+      border: 1px solid var(--line);
+      font-size: .68rem;
+      padding: 3px 8px;
+      border-radius: 6px;
+      color: var(--brown-deep);
+      font-weight: 750;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .cert-card h3 { font-size: 1.05rem; margin: 4px 0 6px; }
+    .cert-card p { font-size: .84rem; flex: 1; margin-bottom: 14px; line-height: 1.5; color: var(--text-secondary); }
+    .note { border-left: 3px solid var(--caramel); padding: 12px 16px; color: var(--text-secondary); font-size: .9rem; margin-top: 24px; background: rgba(181, 107, 55, 0.06); border-radius: 0 12px 12px 0; }
+
+    /* Research Paper Section Styles */
+    .featured-research-card {
+      background: var(--panel-solid);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+      padding: 38px 36px;
+    }
+    .featured-research-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 5px;
+      background: linear-gradient(90deg, #7c4a27, #b56b37, #d98a48, #3d2314);
+    }
+    .research-header {
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 20px;
+    }
+    .research-title {
+      font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+      line-height: 1.28;
+      margin: 10px 0 6px;
+      color: var(--brown-deep);
+      font-weight: 850;
+      letter-spacing: -0.02em;
+    }
+    .research-subtitle {
+      font-size: 1.05rem;
+      color: var(--caramel);
+      font-weight: 700;
+      margin: 0 0 14px;
+    }
+    .research-authors {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: .92rem;
+      color: var(--text-secondary);
+    }
+    .research-affil {
+      font-size: .84rem;
+      color: var(--muted);
+    }
+    .research-body-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 36px;
+      align-items: start;
+    }
+    .research-summary-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-bottom: 20px;
+    }
+    .research-summary-box h4 {
+      margin: 0 0 8px;
+      font-size: .92rem;
+      font-weight: 800;
+      color: var(--brown-deep);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .research-summary-box p {
+      margin: 0;
+      font-size: .92rem;
+      line-height: 1.62;
+      color: var(--text-secondary);
+    }
+    .research-takeaways {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    .takeaway-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 2px 6px rgba(42, 23, 14, 0.04);
+    }
+    .takeaway-icon {
+      font-size: 1.25rem;
+      line-height: 1;
+      padding: 8px;
+      border-radius: 10px;
+      background: rgba(181, 107, 55, 0.1);
+      flex-shrink: 0;
+    }
+    .takeaway-item strong {
+      display: block;
+      color: var(--brown-deep);
+      font-size: .94rem;
+      margin-bottom: 3px;
+    }
+    .takeaway-item p {
+      margin: 0;
+      font-size: .86rem;
+      line-height: 1.55;
+      color: var(--text-secondary);
+    }
+    .research-stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .r-stat {
+      background: var(--bg-alt);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 8px;
+      text-align: center;
+    }
+    .r-stat-num {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--caramel);
+      font-family: var(--font-heading);
+    }
+    .r-stat-lbl {
+      display: block;
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* Resume Video Card */
+    .video-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel-solid);
+      box-shadow: var(--shadow-sm);
+    }
+    .video-frame { width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--line); border-radius: 16px; background: #241710; overflow: hidden; }
+    .video-frame iframe { width: 100%; height: 100%; border: 0; }
+
+    /* Contact Section */
+    .contact {
+      text-align: center;
+      padding: 60px 28px;
+      border: 1px solid var(--line-strong);
+      border-radius: 28px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(181, 107, 55, 0.12), transparent 70%), var(--panel-solid);
+      box-shadow: var(--shadow-sm);
+    }
+    .contact p { color: var(--text-secondary); max-width: 560px; margin: 14px auto 26px; font-size: 1.02rem; }
+
+    /* Footer */
+    footer { padding: 32px 0 42px; color: var(--muted); font-size: .88rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 26px; }
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Certificate Modal / Lightbox */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(36, 23, 16, 0.68);
+      backdrop-filter: blur(12px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity .25s ease;
+    }
+    .modal-backdrop.open { display: flex; opacity: 1; }
+    .modal-box {
+      background: #ffffff;
+      border: 1px solid var(--line-strong);
+      border-radius: 22px;
+      max-width: 960px;
+      width: 100%;
+      max-height: 92vh;
+      overflow-y: auto;
+      box-shadow: 0 30px 80px rgba(36, 23, 16, 0.35);
+      display: flex;
+      flex-direction: column;
+      animation: modalPop .25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes modalPop {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--line);
+      background: #faf7f2;
+    }
+    .modal-header h3 { margin: 4px 0 0; font-size: 1.2rem; color: var(--brown-deep); }
+    .modal-close-btn {
+      background: rgba(74, 46, 27, 0.08);
+      border: 1px solid var(--line);
+      color: var(--brown-deep);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background .2s ease, transform .15s ease;
+    }
+    .modal-close-btn:hover { background: rgba(74, 46, 27, 0.18); transform: scale(1.05); }
+    .modal-body {
+      padding: 24px;
+      text-align: center;
+      background: #180f0a;
+      display: grid;
+      place-items: center;
+    }
+    .modal-body img {
+      max-width: 100%;
+      max-height: 64vh;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .modal-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 24px;
+      border-top: 1px solid var(--line);
+      background: #ffffff;
+      font-size: .88rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 40px; }
+      .avatar-showcase { margin-top: 10px; }
+      .fc-one { right: 0; } .fc-two { left: 0; }
+      .about-cards-grid, .video-card { grid-template-columns: 1fr; }
+      .featured-hack-card { grid-template-columns: 1fr; padding: 26px; gap: 26px; }
+      .featured-research-card { padding: 26px; }
+      .research-body-grid { grid-template-columns: 1fr; gap: 28px; }
+      .research-stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .cert-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .academic-chips { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 620px) {
+      .wrap { width: min(var(--max), calc(100% - 30px)); }
+      nav { min-height: 64px; }
+      .menu-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #ffffff; padding: 18px 22px 22px; border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; z-index: 50; box-shadow: var(--shadow-md); }
+      .nav-links.open { display: flex; }
+      h1 { font-size: clamp(2.8rem, 15vw, 4.4rem); }
+      .avatar-frame { width: 230px; }
+      .avatar-frame-orbit { width: 254px; height: 254px; }
+      .float-card { padding: 8px 12px; font-size: .75rem; }
+      section { padding: 55px 0; }
+      .section-top { align-items: flex-start; flex-direction: column; }
+      .projects-grid, .cert-grid { grid-template-columns: 1fr; }
+      .card { padding: 22px; }
+      .video-card { padding: 20px; }
+      .space-nav-pill-group { width: 100%; display: flex; flex-direction: column; }
+      .modal-footer { flex-direction: column; align-items: stretch; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <div class="nav-shell">
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">VS<span>.</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">Menu ☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Introduction</a>
+        <a href="#about-me">Things About Me</a>
+        <a href="#hackathons">Hackathon Projects</a>
+        <a href="#personal-projects">Personal Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#resume">Resume Video</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <!-- FIRST PAGE: FULL INTRODUCTIONS & DEMO AVATAR HERO -->
+    <header class="hero wrap" id="home">
+      <div>
+        <div class="eyebrow">
+          <span class="pulse"></span> 🎓 VIT Vellore · 1st Year B.Tech CSE · 🏆 1st Place Winner @ VINHACK
+        </div>
+        <h1>Hi, I'm<br><span class="gradient-title">Vishesh Shah.</span></h1>
+        <p class="hero-lead">
+          1st Year Computer Science & Engineering student at <strong>Vellore Institute of Technology (VIT Vellore)</strong>. Builder, problem solver, and <strong>1st Place Winner at VINHACK (graVITas '26) as a fresher</strong>.
+        </p>
+        <p class="hero-copy">
+          I combine strong foundations in computer science with practical hands-on engineering. I thrive under hackathon pressure—achieving 1st place at VINHACK '26 as a 1st-year fresher, qualifying for the final round at Sustainathon '26, engineering prompt-to-form generation at DevJams '26, and building full-stack platforms with real working user interfaces.
+        </p>
+
+        <!-- ACADEMIC IDENTITY SPOTLIGHT -->
+        <div class="academic-chips">
+          <div class="acad-chip">
+            <div class="acad-chip-icon">🏛️</div>
+            <div class="acad-chip-text">
+              <small>College / University</small>
+              <strong>Vellore Institute of Technology</strong>
+            </div>
+          </div>
+          <div class="acad-chip">
+            <div class="acad-chip-icon">🎓</div>
+            <div class="acad-chip-text">
+              <small>Current Academic Year</small>
+              <strong>1st Year B.Tech (2026–2030)</strong>
+            </div>
+          </div>
+          <div class="acad-chip">
+            <div class="acad-chip-icon">💻</div>
+            <div class="acad-chip-text">
+              <small>Branch / Specialization</small>
+              <strong>Computer Science & Engineering</strong>
+            </div>
+          </div>
+          <div class="acad-chip">
+            <div class="acad-chip-icon">🏆</div>
+            <div class="acad-chip-text">
+              <small>Hackathon Highlight</small>
+              <strong>1st Place Winner · VINHACK 2026</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="#hackathons">🏆 Hackathon Projects <span aria-hidden="true">→</span></a>
+          <a class="btn btn-secondary" href="#personal-projects">💻 Personal Projects <span aria-hidden="true">↓</span></a>
+          <a class="btn btn-secondary" href="#about-me">Things About Me ↓</a>
+        </div>
+        <div class="socials">
+          <a href="https://github.com/vshah12225" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/vishesh-shah-233471423/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <a href="#certificates">Certificates & Awards ↓</a>
+          <a href="#resume">Resume Video ▶</a>
+        </div>
+      </div>
+
+      <!-- REAL PROFILE PHOTO SHOWCASE WITH FLOATING CHIPS -->
+      <div class="avatar-showcase" aria-label="Vishesh Shah - Profile Photo & Highlights">
+        <div class="avatar-frame-orbit" aria-hidden="true"></div>
+        <div class="avatar-frame" onclick="openCertModal('assets/vishesh-photo.jpg', 'Vishesh Shah', '1st Year B.Tech Computer Science &amp; Engineering Student at Vellore Institute of Technology (VIT Vellore) · 1st Place Winner at VINHACK 2026', '')" title="Click to view full photo">
+          <img src="assets/vishesh-photo.jpg" alt="Vishesh Shah - 1st Year B.Tech CSE at VIT Vellore" class="profile-photo-img" loading="eager">
+          <span class="photo-zoom-badge">🔍 Zoom Photo</span>
+        </div>
+        <div class="float-card fc-one">
+          <strong>🏛️ VIT Vellore</strong>
+          <small>1st Year CSE (B.Tech)</small>
+        </div>
+        <div class="float-card fc-two">
+          <strong>🏆 1st Place Winner @ VINHACK</strong>
+          <small>Won as a 1st-Year Fresher</small>
+        </div>
+        <div class="float-card fc-three">
+          <strong>🛡️ Sustainathon '26 Finalist</strong>
+          <small>ImmuneFleet (Final Round)</small>
+        </div>
+      </div>
+    </header>
+
+    <!-- SECTION: THINGS ABOUT ME -->
+    <section id="about-me" style="background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+      <div class="wrap">
+        <div class="section-top reveal">
+          <div>
+            <div class="kicker">Who I Am & What Drives Me</div>
+            <h2>Things About Me.<br><span class="gradient-title">Curious by Nature, Driven to Build.</span></h2>
+          </div>
+          <p class="section-intro">
+            An overview of my academic journey at VIT Vellore, my engineering passions, and the real-world problems I aim to tackle through technology.
+          </p>
+        </div>
+
+        <div class="about-cards-grid reveal">
+          <!-- CARD 1: COLLEGE & ACADEMICS -->
+          <article class="about-feature">
+            <div class="about-feature-icon">🏛️</div>
+            <h3>Academic Journey at VIT Vellore</h3>
+            <p>
+              I am currently pursuing my <strong>1st Year B.Tech in Computer Science and Engineering</strong> at <strong>Vellore Institute of Technology (VIT Vellore)</strong>. I am focused on mastering fundamental data structures, algorithms, object-oriented design, and discrete mathematical logic to build high-performance computing solutions.
+            </p>
+          </article>
+
+          <!-- CARD 2: HACKATHON PASSION -->
+          <article class="about-feature">
+            <div class="about-feature-icon">🏆</div>
+            <h3>1st Place Hackathon Winner as a Fresher</h3>
+            <p>
+              I thrive in 24 to 48-hour competitive sprint environments. <strong>As a 1st-year fresher, I achieved 1st Place (Winner) at VINHACK 2026</strong> with <strong>Furti AI</strong>, advanced to the <strong>Final Round at Sustainathon 2026</strong> with <strong>ImmuneFleet</strong>, and engineered <strong>Formora AI</strong> at <strong>DevJams ’26</strong>.
+            </p>
+          </article>
+
+          <!-- CARD 3: CYBERSECURITY & PRIVACY -->
+          <article class="about-feature">
+            <div class="about-feature-icon">🛡️</div>
+            <h3>Decentralized Security & Fleet Privacy</h3>
+            <p>
+              I am passionate about building systems where collective intelligence doesn't sacrifice user confidentiality. Inspired by biology, projects like <strong>ImmuneFleet</strong> embody my core belief: <em>“Cars share antibodies, not data”</em>—sharing threat signatures without leaking raw GPS or VIN telemetry.
+            </p>
+          </article>
+
+          <!-- CARD 4: FULL-STACK & AI FRONTIER -->
+          <article class="about-feature">
+            <div class="about-feature-icon">⚡</div>
+            <h3>Full-Stack Craftsmanship to AI/ML</h3>
+            <p>
+              From building real-time WebSockets with sub-millisecond audio/video sync in <strong>Watch Party</strong> to crafting dynamic prompt-to-form generation in <strong>Formora AI</strong> and reflex agents in <strong>Furti AI</strong>, I build practical tools with complete working interfaces.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HACKATHON PROJECTS SPACE -->
+    <section id="hackathons">
+      <div class="wrap">
+        <div class="section-top reveal">
+          <div>
+            <div class="kicker">National Competitions · Real-World Prototypes</div>
+            <h2>Hackathon Projects.<br><span class="gradient-title">Built Under Pressure.</span></h2>
+          </div>
+          <p class="section-intro">
+            High-intensity software engineered, battle-tested, and presented during national hackathons to address critical security, privacy, and automation challenges.
+          </p>
+        </div>
+
+        <!-- Space Switcher Tabs -->
+        <div class="space-nav-pill-group reveal">
+          <a href="#hackathons" class="space-pill active">🏆 Hackathon Projects (3)</a>
+          <a href="#personal-projects" class="space-pill">💻 Personal Projects (1)</a>
+        </div>
+
+        <div class="grid">
+          <!-- 1. FURTI AI FEATURED HACKATHON CARD (VINHACK 2026 - 1ST PLACE WINNER AS A FRESHER) -->
+          <article class="featured-hack-card featured-winner-card reveal" id="furtiai">
+            <div>
+              <div class="badge-group">
+                <span class="badge badge-gold">🏆 1st Place Winner (1st Prize)</span>
+                <span class="badge badge-gold">🥇 Won as a 1st-Year Fresher</span>
+                <span class="badge badge-brown">VINHACK · graVITas 2026</span>
+                <span class="badge badge-amber">Presented by VinnovateIT & HCLTech</span>
+                <span class="badge badge-green">VIT Vellore</span>
+              </div>
+              <h3 style="font-size:clamp(1.8rem, 3.2vw, 2.3rem); margin: 6px 0 10px;">Furti AI</h3>
+              <div class="project-quote">“Compiling LLM plans into local OpenCV reflexes to eliminate VLA latency.”</div>
+              <p style="color: var(--text); font-size: .95rem; line-height: 1.65; font-weight: 500;">
+                A high-speed desktop automation agent that won <strong>1st Place (Winner) at VINHACK 2026 as a 1st-year fresher</strong>! Competing against experienced developers and multi-year teams at graVITas '26, Furti AI achieved the top award by solving the latency and token-cost bottlenecks of standard Vision-Language-Action (VLA) agents.
+              </p>
+              <p style="color: var(--text-secondary); font-size: .9rem;">
+                Standard VLA desktop agents make expensive multimodal LLM calls on every single screen frame, causing unacceptable latency and high operating expenses. Furti AI solves this by calling the model exactly once per novel task to synthesize the workflow, then compiling high-level plans into local cropped image template reflexes that replay via OpenCV in milliseconds with zero recurring token expense.
+              </p>
+
+              <ul class="project-points">
+                <li>
+                  <span class="bullet">▹</span>
+                  <div><strong>1st Place Hackathon Achievement:</strong> Awarded 1st prize at VINHACK by demonstrating end-to-end desktop automation executing sub-millisecond reflexes as a 1st-year student team.</div>
+                </li>
+                <li>
+                  <span class="bullet">▹</span>
+                  <div><strong>Single-Call Plan Compilation:</strong> Queries the model once per novel task, caching the cropped template image, coordinates, and metadata locally into an instant execution skill.</div>
+                </li>
+                <li>
+                  <span class="bullet">▹</span>
+                  <div><strong>Autonomous Dynamic Re-anchoring:</strong> When UI confidence dips below the threshold, a Reflex Realigner automatically re-anchors the template dynamically or triggers the Brain Planner to re-synthesize.</div>
+                </li>
+              </ul>
+
+              <div class="tags">
+                <span class="tag">1st Place Winner</span>
+                <span class="tag">Fresher Winner</span>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">OpenCV</span>
+                <span class="tag">LLM Tool Calling</span>
+                <span class="tag">VLA Reflexes</span>
+                <span class="tag">Python</span>
+                <span class="tag">graVITas 2026</span>
+                <span class="tag">VinnovateIT</span>
+              </div>
+
+              <div class="actions" style="margin: 20px 0 0;">
+                <button class="btn btn-primary" onclick="openCertModal('assets/projects/furtiai-ui.png', 'Furti AI — Desktop Automation UI', 'Transparent desktop automation with task planning, live status inspection, and local OpenCV reflexes', '')">
+                  Inspect App UI 💻
+                </button>
+                <button class="btn btn-secondary" onclick="openCertModal('assets/certificates/vinhack-cert.jpg', 'VINHACK 2026 Certificate · 1st Place Winner', '1st Place Winner (Achieved as a 1st-Year Fresher) — graVITas 2026, VIT Vellore (VinnovateIT & HCLTech)', 'assets/certificates/vinhack-2026.pdf')">
+                  VINHACK Certificate 📜
+                </button>
+                <button class="btn btn-secondary" onclick="openCertModal('assets/vinhack-stage-winner.jpg', 'VINHACK 2026 — 1st Place Award Ceremony on Stage', 'Vishesh Shah on stage celebrating 1st Place at VINHACK (graVITas 2026, VIT Vellore, VinnovateIT & HCLTech) as a 1st-year fresher!', 'assets/certificates/vinhack-2026.pdf')">
+                  Stage Photo 📸
+                </button>
+                <a class="btn btn-secondary" href="https://github.com/vshah12225" target="_blank" rel="noreferrer">
+                  GitHub Profile ↗
+                </a>
+              </div>
+            </div>
+
+            <!-- FURTI AI MULTI-MEDIA SHOWCASE (LIVE UI + CERTIFICATE + STAGE PHOTO) -->
+            <div class="project-media-showcase">
+              <div class="media-tab-group">
+                <button class="media-tab-btn active" data-img="assets/projects/furtiai-ui.png" data-title="Furti AI — Transparent Desktop Automation UI" data-desc="Complete task planning, approval console, live status monitoring, and OpenCV template execution UI." data-badge="Live UI" data-pdf="" onclick="switchProjectMedia(this)">💻 App UI</button>
+                <button class="media-tab-btn" data-img="assets/certificates/vinhack-cert.jpg" data-title="VINHACK 2026 Certificate · 1st Place Winner" data-desc="Awarded 1st Place (Winner) at VINHACK during graVITas 2026 at VIT Vellore, presented by VinnovateIT & HCLTech." data-badge="Certificate" data-pdf="assets/certificates/vinhack-2026.pdf" onclick="switchProjectMedia(this)">📜 Certificate</button>
+                <button class="media-tab-btn" data-img="assets/vinhack-stage-winner.jpg" data-title="VINHACK 2026 — Stage Award Ceremony" data-desc="Vishesh Shah on stage receiving 1st prize at VINHACK 2026 (VIT Vellore) as a 1st-year fresher!" data-badge="Stage Photo" data-pdf="assets/certificates/vinhack-2026.pdf" onclick="switchProjectMedia(this)">📸 Stage Photo</button>
+              </div>
+              <div class="media-display-card" onclick="openCertModal('assets/projects/furtiai-ui.png', 'Furti AI — Transparent Desktop Automation UI', 'Complete task planning, approval console, live status monitoring, and OpenCV template execution UI.', '')">
+                <div class="media-img-wrap">
+                  <img src="assets/projects/furtiai-ui.png" alt="Furti AI Desktop Automation User Interface" loading="lazy">
+                  <div class="media-zoom-pill">
+                    <span>🔍</span> <span>Live UI</span>
+                  </div>
+                </div>
+                <div class="media-card-footer">
+                  <div class="media-footer-title">
+                    <span>Furti AI — Transparent Desktop Automation UI</span>
+                    <span class="badge badge-gold" style="font-size:.68rem;padding:2px 8px">1st Place · Fresher</span>
+                  </div>
+                  <p class="media-footer-desc">Complete task planning, approval console, live status monitoring, and OpenCV template execution UI.</p>
+                  <div class="media-quick-actions">
+                    <span class="text-link" style="color:var(--caramel);font-size:.82rem">Click to enlarge image 🔍</span>
+                    <span style="color:var(--muted);font-size:.78rem">·</span>
+                    <a class="text-link" href="assets/certificates/vinhack-2026.pdf" target="_blank" rel="noreferrer" style="font-size:.82rem" onclick="event.stopPropagation()">View PDF ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. IMMUNEFLEET FEATURED HACKATHON CARD (SUSTAINATHON 2026 - FINAL ROUND) -->
+          <article class="featured-hack-card reveal" id="immunefleet">
+            <div>
+              <div class="badge-group">
+                <span class="badge badge-gold">🏆 Sustainathon 2026 · Grand Finalist</span>
+                <span class="badge badge-gold">Reached Final Round</span>
+                <span class="badge badge-brown">VIT Vellore & CNET</span>
+                <span class="badge badge-amber">Sustainable AI & Cybersecurity</span>
+                <span class="badge badge-green">Team: SUS26-0065</span>
+              </div>
+              <h3 style="font-size:clamp(1.8rem, 3.2vw, 2.3rem); margin: 6px 0 10px;">ImmuneFleet</h3>
+              <div class="project-quote">“Cars share antibodies, not data.”</div>
+              <p style="color: var(--text); font-size: .95rem; line-height: 1.65; font-weight: 500;">
+                A decentralized, privacy-preserving cybersecurity framework for connected electric vehicle fleets, modeled after biological immunology. <strong>Our team advanced through competitive evaluation to reach the Final Round (Grand Finale) of Sustainathon 2026.</strong>
+              </p>
+              <p style="color: var(--text-secondary); font-size: .9rem;">
+                When an electric vehicle faces a zero-day exploit—such as a malicious CAN bus frame flood targeting steering or braking ECUs—other vehicles on the road share the exact same vulnerability. However, sharing raw diagnostic telemetry exposes sensitive user data like GPS coordinates, vehicle VINs, velocities, and travel habits. ImmuneFleet decentralizes collective fleet defense by generating and sharing lightweight, anonymous threat defense rules (<strong>antibodies</strong>) without ever leaking raw vehicle telemetry.
+              </p>
+
+              <ul class="project-points">
+                <li>
+                  <span class="bullet">▹</span>
+                  <div><strong>Dual-Layer Privacy Defense:</strong> Raw CAN logs are redacted on-vehicle down to relative frame indices and payloads before LLM analysis (Layer 1). A strict deterministic allowlist validator (<code>validator.py</code>) rejects all extra or hallucinated fields (Layer 2).</div>
+                </li>
+                <li>
+                  <span class="bullet">▹</span>
+                  <div><strong>Instant Warning & 3-Car Consensus:</strong> A single vehicle's detection applies local containment immediately and shares an ALERT-only notification across the fleet. Fleet-wide hard blocks require consensus from 3 distinct cryptographically signed vehicles.</div>
+                </li>
+                <li>
+                  <span class="bullet">▹</span>
+                  <div><strong>Peer Sandbox Testing & Staged Rollout:</strong> Healthy vehicles simulate the antibody rule against standard driving and emergency deceleration scenarios before rollout, safeguarding safety-critical functions.</div>
+                </li>
+              </ul>
+
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Streamlit</span>
+                <span class="tag">CAN Bus Security</span>
+                <span class="tag">AI Threat Extraction</span>
+                <span class="tag">Privacy Allowlist</span>
+                <span class="tag">HMAC Signatures</span>
+                <span class="tag">Decentralized Defense</span>
+                <span class="tag">Connected EVs</span>
+                <span class="tag">Grand Finalist</span>
+              </div>
+
+              <div class="actions" style="margin: 20px 0 0;">
+                <a class="btn btn-primary" href="https://immunefleet.streamlit.app" target="_blank" rel="noreferrer">
+                  Explore Live Demo ↗
+                </a>
+                <button class="btn btn-secondary" onclick="openCertModal('assets/projects/immunefleet-ui.jpg', 'ImmuneFleet — Fleet Security Dashboard UI', 'Live Streamlit cyber defense interface showing fleet health, real-time threat containment, consensus rounds, and virus lab', '')">
+                  Inspect Live UI 💻
+                </button>
+                <button class="btn btn-secondary" onclick="openCertModal('assets/certificates/sustainai-cert.jpg', 'Sustainathon 2026 Certificate of Participation (Final Round)', 'Vellore Institute of Technology & CNET — Sustainable AI & Cybersecurity Track (Team: SUS26-0065)', 'assets/certificates/sustainai.pdf')">
+                  Certificate Photo 📜
+                </button>
+                <a class="btn btn-secondary" href="https://github.com/vshah12225" target="_blank" rel="noreferrer">
+                  GitHub Profile ↗
+                </a>
+              </div>
+            </div>
+
+            <!-- IMMUNEFLEET MULTI-MEDIA SHOWCASE (LIVE UI + CERTIFICATE PHOTO) -->
+            <div class="project-media-showcase">
+              <div class="media-tab-group">
+                <button class="media-tab-btn active" data-img="assets/projects/immunefleet-ui.jpg" data-title="ImmuneFleet — Live Fleet Cybersecurity Dashboard UI" data-desc="Real-time vehicle fleet status, attack simulations, virus lab, consensus monitoring, and automated antibody generation." data-badge="Streamlit UI" data-pdf="" onclick="switchProjectMedia(this)">💻 Live UI</button>
+                <button class="media-tab-btn" data-img="assets/certificates/sustainai-cert.jpg" data-title="Sustainathon 2026 Certificate of Participation (Final Round)" data-desc="Awarded for reaching the Final Round in the National-Level Hackathon by Centre for Net-Zero Technologies (CNET) & VIT Vellore." data-badge="Certificate" data-pdf="assets/certificates/sustainai.pdf" onclick="switchProjectMedia(this)">📜 Certificate</button>
+              </div>
+              <div class="media-display-card" onclick="openCertModal('assets/projects/immunefleet-ui.jpg', 'ImmuneFleet — Live Fleet Cybersecurity Dashboard UI', 'Real-time vehicle fleet status, attack simulations, virus lab, consensus monitoring, and automated antibody generation.', '')">
+                <div class="media-img-wrap">
+                  <img src="assets/projects/immunefleet-ui.jpg" alt="ImmuneFleet Live Streamlit Dashboard UI" loading="lazy">
+                  <div class="media-zoom-pill">
+                    <span>🔍</span> <span>Streamlit UI</span>
+                  </div>
+                </div>
+                <div class="media-card-footer">
+                  <div class="media-footer-title">
+                    <span>ImmuneFleet — Fleet Defense Dashboard</span>
+                    <span class="badge badge-gold" style="font-size:.68rem;padding:2px 8px">Final Round</span>
+                  </div>
+                  <p class="media-footer-desc">Real-time vehicle fleet status, attack simulations, virus lab, consensus monitoring, and automated antibody generation.</p>
+                  <div class="media-quick-actions">
+                    <span class="text-link" style="color:var(--caramel);font-size:.82rem">Click to enlarge image 🔍</span>
+                    <span style="color:var(--muted);font-size:.78rem">·</span>
+                    <a class="text-link" href="assets/certificates/sustainai.pdf" target="_blank" rel="noreferrer" style="font-size:.82rem" onclick="event.stopPropagation()">View PDF ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. FORMORA AI FEATURED HACKATHON CARD (DEVJAMS '26 WITH UI + CERTIFICATE) -->
+          <article class="featured-hack-card reveal" id="formora">
+            <div>
+              <div class="badge-group">
+                <span class="badge badge-gold">⚡ DevJams ’26 Hackathon</span>
+                <span class="badge badge-brown">graVITas 2026 · VIT Vellore</span>
+                <span class="badge badge-amber">Partnered with HCLTech</span>
+                <span class="badge badge-green">Reg: 26BCE2168</span>
+              </div>
+              <h3 style="font-size:clamp(1.8rem, 3.2vw, 2.3rem); margin: 6px 0 10px;">Formora AI</h3>
+              <div class="project-quote">“Tell it what the form needs to do. It writes the form.”</div>
+              <p style="color: var(--text); font-size: .95rem; line-height: 1.65; font-weight: 500;">
+                An intelligent form generation engine and companion browser extension built during the high-speed <strong>DevJams ’26</strong> hackathon at VIT Vellore's annual techno-management fest (graVITas 2026).
+              </p>
+              <p style="color: var(--text-secondary); font-size: .9rem;">
+                Traditional form building requires repetitive HTML scaffolding, CSS alignment, and brittle manual validation rules. Formora AI solves this by allowing developers and creators to simply prompt what data needs to be collected in natural language. Formora then automatically drafts, structures, styles, and validates production-ready interactive web forms with built-in schema checks.
+              </p>
+
+              <ul class="project-points">
+                <li>
+                  <span class="bullet">▹</span>
+                  <div><strong>Prompt-to-Form Synthesis:</strong> Converts natural language requirements into clean semantic input fields, validation rules, and structured layout components in seconds.</div>
+                </li>
+                <li>
+                  <span class="bullet">▹</span>
+                  <div><strong>Client-Side Schema & Logic Validation:</strong> Automatically injects regex validation patterns, required constraints, and conditional show/hide logic without manual boilerplate.</div>
+                </li>
+                <li>
+                  <span class="bullet">▹</span>
+                  <div><strong>Dual Workspace (Web & Extension):</strong> Features a standalone web builder and a companion browser extension to generate, inspect, and embed forms directly within existing workflows.</div>
+                </li>
+              </ul>
+
+              <div class="tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">AI Form Generation</span>
+                <span class="tag">Browser Extensions API</span>
+                <span class="tag">Dynamic DOM</span>
+                <span class="tag">Schema Validation</span>
+                <span class="tag">DevJams ’26</span>
+                <span class="tag">graVITas</span>
+              </div>
+
+              <div class="actions" style="margin: 20px 0 0;">
+                <button class="btn btn-primary" onclick="openCertModal('assets/projects/formora-ui.jpg', 'Formora AI — Extension & Web Companion UI', 'Chrome extension companion with in-browser AI page analyzer, dynamic summarizer, reading controls, and live schema generation', '')">
+                  Inspect Extension UI 💻
+                </button>
+                <button class="btn btn-secondary" onclick="openCertModal('assets/certificates/devjams-cert.jpg', 'DevJams ’26 Participation Certificate', 'graVITas 2026 — Annual Techno-Management Fest, VIT Vellore (Project: Formora AI)', 'assets/certificates/devjams-2026.pdf')">
+                  DevJams Certificate 📜
+                </button>
+                <a class="btn btn-secondary" href="https://github.com/vshah12225" target="_blank" rel="noreferrer">
+                  GitHub Profile ↗
+                </a>
+              </div>
+            </div>
+
+            <!-- FORMORA AI MULTI-MEDIA SHOWCASE (LIVE UI + CERTIFICATE PHOTO) -->
+            <div class="project-media-showcase">
+              <div class="media-tab-group">
+                <button class="media-tab-btn active" data-img="assets/projects/formora-ui.jpg" data-title="Formora AI — Extension Companion & Reading Assistant UI" data-desc="Chrome extension companion with AI page analysis, text summarization, accessibility reading controls, and form automation." data-badge="Extension UI" data-pdf="" onclick="switchProjectMedia(this)">💻 Extension UI</button>
+                <button class="media-tab-btn" data-img="assets/certificates/devjams-cert.jpg" data-title="DevJams ’26 Participation Certificate" data-desc="Awarded for participating in DevJams'26 hackathon during graVITas 2026 at VIT Vellore, partnered with HCLTech." data-badge="Certificate" data-pdf="assets/certificates/devjams-2026.pdf" onclick="switchProjectMedia(this)">📜 Certificate</button>
+              </div>
+              <div class="media-display-card" onclick="openCertModal('assets/projects/formora-ui.jpg', 'Formora AI — Extension Companion & Reading Assistant UI', 'Chrome extension companion with AI page analysis, text summarization, accessibility reading controls, and form automation.', '')">
+                <div class="media-img-wrap">
+                  <img src="assets/projects/formora-ui.jpg" alt="Formora AI Extension User Interface" loading="lazy">
+                  <div class="media-zoom-pill">
+                    <span>🔍</span> <span>Extension UI</span>
+                  </div>
+                </div>
+                <div class="media-card-footer">
+                  <div class="media-footer-title">
+                    <span>Formora AI — Browser Companion</span>
+                    <span class="badge badge-gold" style="font-size:.68rem;padding:2px 8px">DevJams '26</span>
+                  </div>
+                  <p class="media-footer-desc">Chrome extension companion with AI page analysis, text summarization, accessibility reading controls, and form automation.</p>
+                  <div class="media-quick-actions">
+                    <span class="text-link" style="color:var(--caramel);font-size:.82rem">Click to enlarge image 🔍</span>
+                    <span style="color:var(--muted);font-size:.78rem">·</span>
+                    <a class="text-link" href="assets/certificates/devjams-2026.pdf" target="_blank" rel="noreferrer" style="font-size:.82rem" onclick="event.stopPropagation()">View PDF ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERSONAL PROJECTS SPACE (EXCLUSIVELY INDEPENDENT BUILDS) -->
+    <section id="personal-projects" style="background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+      <div class="wrap">
+        <div class="section-top reveal">
+          <div>
+            <div class="kicker">Independent Engineering & Software Tools</div>
+            <h2>Personal Projects.<br><span class="gradient-title">Crafted from Curiosity.</span></h2>
+          </div>
+          <p class="section-intro">
+            Full-stack web applications, developer utilities, and independent systems built from scratch to explore new technologies, master architectures, and solve practical needs.
+          </p>
+        </div>
+
+        <!-- Space Switcher Tabs -->
+        <div class="space-nav-pill-group reveal">
+          <a href="#hackathons" class="space-pill">🏆 Hackathon Projects (3)</a>
+          <a href="#personal-projects" class="space-pill active">💻 Personal Projects (1)</a>
+        </div>
+
+        <div class="grid projects-grid">
+          <!-- PROJECT 1: WATCH PARTY (WITH REAL WORKING UI SHOWCASE) -->
+          <article class="card reveal" id="watch-party">
+            <div class="media-display-card" onclick="openCertModal('assets/projects/watchparty-ui.png', 'Watch Party — Synchronized Video Rooms UI', 'Real-time collaborative video watching web application with room lobby, sub-millisecond sync, and audience controls.', '')" style="margin-bottom:20px;">
+              <div class="media-img-wrap">
+                <img src="assets/projects/watchparty-ui.png" alt="Watch Party Real-Time Video Sync Web App User Interface" loading="lazy">
+                <div class="media-zoom-pill">
+                  <span>🔍</span> <span>Inspect UI</span>
+                </div>
+              </div>
+              <div class="media-card-footer">
+                <div class="media-footer-title">
+                  <span>Watch Party — Room Lobby Interface</span>
+                  <span class="badge badge-green" style="font-size:.68rem;padding:2px 8px">Full-Stack App</span>
+                </div>
+                <p class="media-footer-desc">Custom ticket-style room code generation, private/public lobbies, and real-time playback synchronization.</p>
+              </div>
+            </div>
+            <div class="project-label">
+              <span>Full-Stack Web App</span>
+              <span>Real-Time Media</span>
+            </div>
+            <h3>Watch Party</h3>
+            <div class="project-quote" style="font-size:.92rem;margin:8px 0 12px;padding:8px 12px">
+              “Synchronized video streaming rooms with automatic drift compensation.”
+            </div>
+            <p>
+              A real-time collaborative web application for watching synchronized video streams with friends. Features shared play/pause/seek controls with sub-millisecond drift correction, live chat, animated reactions, dynamic room playlists, audience sync status monitoring, and host permission controls.
+            </p>
+            <div class="tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">Express</span>
+              <span class="tag">Socket.IO</span>
+              <span class="tag">HTML5 Video API</span>
+              <span class="tag">WebSockets</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div class="actions" style="margin: 16px 0 0;">
+              <button class="btn btn-primary" onclick="openCertModal('assets/projects/watchparty-ui.png', 'Watch Party — Synchronized Video Rooms UI', 'Real-time collaborative video watching web application with room lobby, sub-millisecond sync, and audience controls.', '')">
+                Inspect UI Screenshot 💻
+              </button>
+              <a class="btn btn-secondary" href="https://github.com/vshah12225" target="_blank" rel="noreferrer">
+                Browse on GitHub ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: UPCOMING SYSTEMS / LAB -->
+          <article class="card reveal" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding: 36px 24px; background: #fffdfa;">
+            <div style="font-size:2.4rem; color: var(--caramel); margin-bottom: 8px;">＋</div>
+            <h3 style="margin: 0 0 8px;">More Personal Projects in Progress</h3>
+            <p style="max-width: 500px; margin-bottom: 18px; color: var(--text-secondary);">
+              Currently architecting intelligent agent systems, algorithmic problem-solving toolkits, and machine learning experiments. Follow along on GitHub for the latest releases.
+            </p>
+            <a class="btn btn-secondary" href="https://github.com/vshah12225" target="_blank" rel="noreferrer">
+              Follow @vshah12225 on GitHub ↗
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUME VIDEO -->
+    <section id="resume">
+      <div class="wrap">
+        <div class="section-top reveal">
+          <div><div class="kicker">Meet me in motion</div><h2>A resume, beyond the page.</h2></div>
+          <p class="section-intro">A short video introduction sharing my background, project motivations, and what I look forward to building next.</p>
+        </div>
+        <div class="video-card reveal">
+          <div>
+            <div class="kicker">Video introduction</div>
+            <h3 style="font-size:1.7rem; color:var(--brown-deep);">A quick introduction to Vishesh</h3>
+            <p style="color:var(--text-secondary);">Introducing my technical focus, hackathon victories like Furti AI, projects like ImmuneFleet and Formora AI, problem-solving mindset, and collaborative engineering opportunities.</p>
+            <a class="btn btn-primary" href="https://drive.google.com/file/d/1Qn6HOXA-cGG3mxdxp-rm0zuC7s2hxGdd/view?usp=drivesdk" target="_blank" rel="noreferrer">Open resume video ↗</a>
+          </div>
+          <div class="video-frame">
+            <iframe src="https://drive.google.com/file/d/1Qn6HOXA-cGG3mxdxp-rm0zuC7s2hxGdd/preview" title="Vishesh Shah resume video" allow="autoplay" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES & MILESTONES -->
+    <section id="certificates" style="background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+      <div class="wrap">
+        <div class="section-top reveal">
+          <div><div class="kicker">Learning & Participation</div><h2>Milestones along the way.</h2></div>
+          <p class="section-intro">National hackathons, 1st place victories, competitive engineering sprints, and certified skill verifications. Click any certificate to inspect the document.</p>
+        </div>
+        <div class="grid cert-grid">
+          <!-- VINHACK 2026 -->
+          <article class="card cert-card reveal">
+            <div class="cert-card-thumb" onclick="openCertModal('assets/certificates/vinhack-cert.jpg', 'VINHACK 2026 Certificate · 1st Place Winner', '1st Place Winner (Achieved as a 1st-Year Fresher) — graVITas 2026, VIT Vellore (VinnovateIT & HCLTech)', 'assets/certificates/vinhack-2026.pdf')">
+              <img src="assets/certificates/vinhack-cert.jpg" alt="VINHACK 2026 Certificate Preview" loading="lazy">
+              <span class="cert-thumb-badge" style="color:#8a481c;background:#fff8ee">🏆 1st Place</span>
+            </div>
+            <div class="badge-group" style="margin-bottom:6px">
+              <span class="badge badge-gold" style="font-size:.65rem;padding:2px 8px">🏆 1st Prize · Fresher</span>
+            </div>
+            <h3>VINHACK 2026 (Winner)</h3>
+            <p><strong>1st Place Winner (Achieved as a 1st-Year Fresher)</strong> · graVITas 2026, VIT Vellore (VinnovateIT & HCLTech). Project: <strong>Furti AI</strong>.</p>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <button class="text-link" style="background:none;border:none;cursor:pointer;padding:0" onclick="openCertModal('assets/certificates/vinhack-cert.jpg', 'VINHACK 2026 Certificate · 1st Place Winner', '1st Place Winner (Achieved as a 1st-Year Fresher) — graVITas 2026, VIT Vellore (VinnovateIT & HCLTech)', 'assets/certificates/vinhack-2026.pdf')">Inspect ↗</button>
+              <button class="text-link" style="background:none;border:none;cursor:pointer;padding:0;color:var(--caramel)" onclick="openCertModal('assets/vinhack-stage-winner.jpg', 'VINHACK 2026 — 1st Place Award Ceremony on Stage', 'Vishesh Shah on stage celebrating 1st Place at VINHACK (graVITas 2026, VIT Vellore, VinnovateIT & HCLTech) as a 1st-year fresher!', 'assets/certificates/vinhack-2026.pdf')">Stage Photo 📸</button>
+              <a class="text-link" href="assets/certificates/vinhack-2026.pdf" target="_blank" rel="noreferrer">PDF ↗</a>
+            </div>
+          </article>
+
+          <!-- SUSTAINATHON 2026 -->
+          <article class="card cert-card reveal">
+            <div class="cert-card-thumb" onclick="openCertModal('assets/certificates/sustainai-cert.jpg', 'Sustainathon 2026 Certificate of Participation (Final Round)', 'Vellore Institute of Technology & CNET — Sustainable AI & Cybersecurity Track (Team: SUS26-0065)', 'assets/certificates/sustainai.pdf')">
+              <img src="assets/certificates/sustainai-cert.jpg" alt="Sustainathon 2026 Certificate Preview" loading="lazy">
+              <span class="cert-thumb-badge">🔍 Inspect</span>
+            </div>
+            <div class="badge-group" style="margin-bottom:6px">
+              <span class="badge badge-gold" style="font-size:.65rem;padding:2px 8px">Grand Finalist</span>
+            </div>
+            <h3>Sustainathon 2026</h3>
+            <p>National Hackathon Finalist (Final Round) · VIT Vellore & CNET. Sustainable AI & Cybersecurity Track (Project: <strong>ImmuneFleet</strong>).</p>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <button class="text-link" style="background:none;border:none;cursor:pointer;padding:0" onclick="openCertModal('assets/certificates/sustainai-cert.jpg', 'Sustainathon 2026 Certificate of Participation (Final Round)', 'Vellore Institute of Technology & CNET — Sustainable AI & Cybersecurity Track (Team: SUS26-0065)', 'assets/certificates/sustainai.pdf')">Inspect ↗</button>
+              <a class="text-link" href="assets/certificates/sustainai.pdf" target="_blank" rel="noreferrer">PDF ↗</a>
+            </div>
+          </article>
+
+          <!-- DEVJAMS 2026 -->
+          <article class="card cert-card reveal">
+            <div class="cert-card-thumb" onclick="openCertModal('assets/certificates/devjams-cert.jpg', 'DevJams ’26 Participation Certificate', 'graVITas 2026 — Annual Techno-Management Fest, VIT Vellore (Project: Formora AI)', 'assets/certificates/devjams-2026.pdf')">
+              <img src="assets/certificates/devjams-cert.jpg" alt="DevJams 2026 Certificate Preview" loading="lazy">
+              <span class="cert-thumb-badge">🔍 Inspect</span>
+            </div>
+            <div class="badge-group" style="margin-bottom:6px">
+              <span class="badge badge-brown" style="font-size:.65rem;padding:2px 8px">graVITas '26</span>
+            </div>
+            <h3>DevJams ’26</h3>
+            <p>National Hackathon · graVITas 2026, VIT Vellore (Partnered with HCLTech). Project: <strong>Formora AI</strong>.</p>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <button class="text-link" style="background:none;border:none;cursor:pointer;padding:0" onclick="openCertModal('assets/certificates/devjams-cert.jpg', 'DevJams ’26 Participation Certificate', 'graVITas 2026 — Annual Techno-Management Fest, VIT Vellore (Project: Formora AI)', 'assets/certificates/devjams-2026.pdf')">Inspect ↗</button>
+              <a class="text-link" href="assets/certificates/devjams-2026.pdf" target="_blank" rel="noreferrer">PDF ↗</a>
+            </div>
+          </article>
+
+          <!-- PYTHON BASICS -->
+          <article class="card cert-card reveal">
+            <div class="cert-card-thumb" onclick="openCertModal('assets/certificates/python-basics-cert.jpg', 'Python (Basic) Skill Certification', 'HackerRank Verified Certificate · Certificate ID: DEAFB308757B · Completed Oct 14, 2026', 'assets/certificates/python-basics-certificate.pdf')">
+              <img src="assets/certificates/python-basics-cert.jpg" alt="Python Basics HackerRank Certificate Preview" loading="lazy">
+              <span class="cert-thumb-badge">🔍 Inspect</span>
+            </div>
+            <div class="badge-group" style="margin-bottom:6px">
+              <span class="badge badge-green" style="font-size:.65rem;padding:2px 8px">HackerRank</span>
+            </div>
+            <h3>Python (Basic)</h3>
+            <p>HackerRank Skill Certification · Verified proficiency in Python fundamentals & data structures (ID: <code>DEAFB308757B</code>).</p>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <button class="text-link" style="background:none;border:none;cursor:pointer;padding:0" onclick="openCertModal('assets/certificates/python-basics-cert.jpg', 'Python (Basic) Skill Certification', 'HackerRank Verified Certificate · Certificate ID: DEAFB308757B · Completed Oct 14, 2026', 'assets/certificates/python-basics-certificate.pdf')">Inspect ↗</button>
+              <a class="text-link" href="assets/certificates/python-basics-certificate.pdf" target="_blank" rel="noreferrer">PDF ↗</a>
+            </div>
+          </article>
+        </div>
+        <p class="note">Verified credentials, hackathon victories, and participation records. Click any certificate card to inspect the document up close, view the stage ceremony photo, or download the official PDF version.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact reveal">
+          <div class="kicker">Let's connect</div>
+          <h2>Good ideas start with a conversation.</h2>
+          <p>Interested in building something together, discussing connected fleet security, or collaborating on hackathons and AI projects? I would love to hear from you.</p>
+          <div class="actions" style="justify-content:center">
+            <a class="btn btn-primary" href="https://www.linkedin.com/in/vishesh-shah-233471423/" target="_blank" rel="noreferrer">Connect on LinkedIn ↗</a>
+            <a class="btn btn-secondary" href="https://github.com/vshah12225" target="_blank" rel="noreferrer">Explore GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CERTIFICATE & UI LIGHTBOX MODAL -->
+  <div class="modal-backdrop" id="certModal" role="dialog" aria-modal="true" aria-labelledby="modalCertTitle">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <span class="badge badge-gold" id="modalCertBadge">Showcase View</span>
+          <h3 id="modalCertTitle">Media Inspection</h3>
+        </div>
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <img id="modalCertImg" src="" alt="Media inspection preview">
+      </div>
+      <div class="modal-footer">
+        <div id="modalCertDesc" style="flex:1;min-width:260px"></div>
+        <div style="display:flex;gap:12px;align-items:center">
+          <a class="btn btn-primary" id="modalCertPdf" href="" target="_blank" rel="noreferrer" style="padding:9px 16px;font-size:.85rem">Open Original PDF ↗</a>
+          <button class="btn btn-secondary" id="modalCloseBtn2" style="padding:9px 16px;font-size:.85rem">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>© <span id="year"></span> Vishesh Shah · Vellore Institute of Technology (VIT). Built with curiosity & code.</div>
+      <div><a href="#home" class="text-link">Back to top ↑</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation toggle for mobile
+    const toggle = document.getElementById('menuToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? 'Close ✕' : 'Menu ☰';
+    });
+    links.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = 'Menu ☰';
+    }));
+
+    // Auto-update copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll reveal observer
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Media Switcher for Project Cards (Live UI vs Certificate vs Stage Photo)
+    function switchProjectMedia(btn) {
+      const showcase = btn.closest('.project-media-showcase');
+      const tabs = showcase.querySelectorAll('.media-tab-btn');
+      tabs.forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+
+      const card = showcase.querySelector('.media-display-card');
+      const img = card.querySelector('img');
+      const titleEl = card.querySelector('.media-footer-title span');
+      const descEl = card.querySelector('.media-footer-desc');
+      const badgeEl = card.querySelector('.media-zoom-pill span:last-child');
+
+      const imgSrc = btn.getAttribute('data-img');
+      const title = btn.getAttribute('data-title');
+      const desc = btn.getAttribute('data-desc');
+      const badge = btn.getAttribute('data-badge') || 'Inspect';
+      const pdf = btn.getAttribute('data-pdf') || '';
+
+      img.src = imgSrc;
+      img.alt = title;
+      if (titleEl) titleEl.textContent = title;
+      if (descEl) descEl.textContent = desc;
+      if (badgeEl) badgeEl.textContent = badge;
+
+      card.onclick = () => openCertModal(imgSrc, title, desc, pdf);
+    }
+
+    // Modal Lightbox
+    const modal = document.getElementById('certModal');
+    const modalImg = document.getElementById('modalCertImg');
+    const modalTitle = document.getElementById('modalCertTitle');
+    const modalDesc = document.getElementById('modalCertDesc');
+    const modalPdf = document.getElementById('modalCertPdf');
+    const closeBtn1 = document.getElementById('modalCloseBtn');
+    const closeBtn2 = document.getElementById('modalCloseBtn2');
+
+    function openCertModal(imgSrc, title, description, pdfSrc) {
+      modalImg.src = imgSrc;
+      modalImg.alt = title;
+      modalTitle.textContent = title;
+      modalDesc.textContent = description;
+      if (pdfSrc) {
+        modalPdf.href = pdfSrc;
+        modalPdf.style.display = 'inline-flex';
+      } else {
+        modalPdf.style.display = 'none';
+      }
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCertModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    closeBtn1.addEventListener('click', closeCertModal);
+    closeBtn2.addEventListener('click', closeCertModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeCertModal();
+    });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
+        closeCertModal();
+      }
+    });
+  </script>
+</body>
+</html>
