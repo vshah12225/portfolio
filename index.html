@@ -865,6 +865,7 @@
         <a href="#hackathons">Hackathon Projects</a>
         <a href="#personal-projects">Personal Projects</a>
         <a href="#certificates">Certificates</a>
+        <a href="#research">Research</a>
         <a href="#resume">Resume Video</a>
         <a href="#contact">Contact</a>
       </div>
@@ -1375,6 +1376,198 @@
             </a>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH PAPER SECTION -->
+    <section id="research" style="background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+      <div class="wrap">
+        <div class="section-top reveal">
+          <div>
+            <div class="kicker">Academic Research · VIT Vellore · School of Computer Science &amp; Engineering</div>
+            <h2>Research Work.<br><span class="gradient-title">Peer-Reviewed &amp; Published.</span></h2>
+          </div>
+          <p class="section-intro">Co-authored research investigating real-world robustness of appliance identification systems on Indian power grids — a study in sensor quality, supply distortion, and machine learning reliability.</p>
+        </div>
+
+        <article class="featured-research-card reveal">
+          <!-- Top accent bar via ::before -->
+
+          <!-- PAPER HEADER -->
+          <div class="research-header">
+            <div class="badge-group">
+              <span class="badge badge-brown">📄 Research Paper</span>
+              <span class="badge badge-amber">School of CSE · VIT Vellore</span>
+              <span class="badge badge-green">Co-Author</span>
+            </div>
+            <h3 class="research-title">Will Appliance Identification Survive an Indian Grid and a Low-Cost Sensor?</h3>
+            <p class="research-subtitle">A Robustness Study of Current-Waveform Load Signatures</p>
+            <div class="research-authors">
+              <span>✍️ <strong>Authors:</strong> Ojas Kulkarni, Pratham Bhatia &amp; <strong>Vishesh Shah</strong></span>
+              <span class="research-affil">🏛️ School of Computer Science &amp; Engineering, Vellore Institute of Technology, Vellore, Tamil Nadu — 632014, India</span>
+            </div>
+          </div>
+
+          <!-- BODY: 2-col grid — text left, paper preview right -->
+          <div class="research-body-grid">
+
+            <!-- LEFT COLUMN: Summary + Takeaways + Stats -->
+            <div>
+              <!-- Abstract Summary -->
+              <div class="research-summary-box">
+                <h4>📋 Abstract Summary</h4>
+                <p>
+                  Appliance identification from current waveforms is typically reported on lab-grade recordings and clean power supplies — but does it hold up in a real Indian deployment with a low-cost clip-on sensor and an imperfect supply? This paper answers that question rigorously.
+                </p>
+                <p style="margin-top:10px">
+                  Three public datasets are benchmarked — <strong>PLAID</strong> (USA, 60Hz), <strong>WHITED</strong> (8 regions, 50/60Hz), and <strong>HIFDA</strong> (Spain, 2025) — using device-grouped cross-validation so no test appliance is ever seen during training. Scale-free waveform features are grouped into time-domain (A), harmonic (B), and voltage-dependent (C) sets, with first-principles circuit models of resistive (R), motor (M), and rectifier-capacitor (E) loads used to simulate Indian grid conditions.
+                </p>
+              </div>
+
+              <!-- Key Findings -->
+              <div class="research-takeaways">
+                <div class="takeaway-item">
+                  <span class="takeaway-icon">🎯</span>
+                  <div>
+                    <strong>Strong Baseline Performance</strong>
+                    <p>Random Forest reaches macro-F1 of <strong>0.81</strong> for 11 appliances and <strong>0.93</strong> for three load topologies on PLAID under grouped cross-validation.</p>
+                  </div>
+                </div>
+                <div class="takeaway-item">
+                  <span class="takeaway-icon">⚡</span>
+                  <div>
+                    <strong>Indian Grid Robustness Finding</strong>
+                    <p>A classifier trained on an ideal grid drops from macro-F1 <strong>1.00 → 0.56</strong> once supply voltage distortion reaches 2%. Training across realistic grid conditions removes the drop entirely.</p>
+                  </div>
+                </div>
+                <div class="takeaway-item">
+                  <span class="takeaway-icon">📡</span>
+                  <div>
+                    <strong>Low-Cost Sensor Breaking Points</strong>
+                    <p>Under simulated sensor degradation, <strong>1 kHz sampling</strong>, a <strong>2° CT phase error</strong>, and a <strong>20 dB SNR</strong> are the breaking points. 10-bit ADCs and ±5% gain error cost nothing in accuracy.</p>
+                  </div>
+                </div>
+                <div class="takeaway-item">
+                  <span class="takeaway-icon">🔬</span>
+                  <div>
+                    <strong>Cross-Dataset Generalization</strong>
+                    <p>Load <em>topology</em> transfers almost perfectly across datasets (macro-F1 <strong>0.997</strong> on HIFDA), while appliance <em>identity</em> does not (0.21) — waveform shape identifies the circuit, not the brand.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stats bar -->
+              <div class="research-stats-bar">
+                <div class="r-stat">
+                  <span class="r-stat-num">3</span>
+                  <span class="r-stat-lbl">Public Datasets</span>
+                </div>
+                <div class="r-stat">
+                  <span class="r-stat-num">F1 0.93</span>
+                  <span class="r-stat-lbl">Topology Accuracy</span>
+                </div>
+                <div class="r-stat">
+                  <span class="r-stat-num">0.997</span>
+                  <span class="r-stat-lbl">Cross-Dataset F1</span>
+                </div>
+                <div class="r-stat">
+                  <span class="r-stat-num">5</span>
+                  <span class="r-stat-lbl">Robustness Studies</span>
+                </div>
+              </div>
+
+              <!-- Tags -->
+              <div class="tags">
+                <span class="tag">Non-Intrusive Load Monitoring</span>
+                <span class="tag">Appliance Identification</span>
+                <span class="tag">NILM</span>
+                <span class="tag">Indian Power Grid</span>
+                <span class="tag">Random Forest</span>
+                <span class="tag">Current Waveforms</span>
+                <span class="tag">PLAID</span>
+                <span class="tag">WHITED</span>
+                <span class="tag">HIFDA</span>
+                <span class="tag">Harmonics</span>
+                <span class="tag">Low-Cost Sensor</span>
+                <span class="tag">Machine Learning</span>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="actions" style="margin-top: 22px;">
+                <button class="btn btn-primary" onclick="openCertModal('assets/research/paper-page1-preview.png', 'Research Paper — Page 1 (Abstract &amp; Introduction)', 'Will Appliance Identification Survive an Indian Grid and a Low-Cost Sensor? — Ojas Kulkarni, Pratham Bhatia &amp; Vishesh Shah, VIT Vellore', 'assets/research/appliance-identification-indian-grid.pdf')">
+                  📄 Read Paper
+                </button>
+                <button class="btn btn-secondary" onclick="openCertModal('assets/research/paper-system-pipeline.png', 'Fig. 1 — Five-Stage Identification Pipeline &amp; Robustness Studies', 'The proposed system: the five-stage identification pipeline (top) and the three robustness studies feeding into it (bottom).', 'assets/research/appliance-identification-indian-grid.pdf')">
+                  🔬 View Pipeline Figure
+                </button>
+                <button class="btn btn-secondary" onclick="openCertModal('assets/research/paper-grid-results-fig7.png', 'Fig. 7 — Grid Condition Results', 'Left: drift of current-shape features per topology under each grid condition. Right: topology macro-F1 under each grid condition.', 'assets/research/appliance-identification-indian-grid.pdf')">
+                  📊 Results Figure
+                </button>
+                <a class="btn btn-secondary" href="assets/research/appliance-identification-indian-grid.pdf" target="_blank" rel="noreferrer">
+                  ⬇️ Download PDF
+                </a>
+              </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Paper preview + pipeline figure -->
+            <div>
+              <!-- Paper cover preview -->
+              <div class="project-media-showcase">
+                <div class="media-tab-group">
+                  <button class="media-tab-btn active"
+                    data-img="assets/research/paper-page1-preview.png"
+                    data-title="Research Paper — Title Page &amp; Abstract"
+                    data-desc="Will Appliance Identification Survive an Indian Grid and a Low-Cost Sensor? A Robustness Study of Current-Waveform Load Signatures — VIT Vellore"
+                    data-badge="Abstract"
+                    data-pdf="assets/research/appliance-identification-indian-grid.pdf"
+                    onclick="switchProjectMedia(this)">📄 Abstract</button>
+                  <button class="media-tab-btn"
+                    data-img="assets/research/paper-system-pipeline.png"
+                    data-title="Fig. 1 — Five-Stage System Pipeline"
+                    data-desc="The proposed five-stage identification pipeline (top) and the three robustness studies (Sensor degradation, Circuit simulation, Cross-dataset test) feeding into it (bottom)."
+                    data-badge="Fig. 1"
+                    data-pdf="assets/research/appliance-identification-indian-grid.pdf"
+                    onclick="switchProjectMedia(this)">🔬 Fig. 1</button>
+                  <button class="media-tab-btn"
+                    data-img="assets/research/paper-grid-results-fig7.png"
+                    data-title="Fig. 7 — Grid Condition Results"
+                    data-desc="Left: drift of current-shape features (set AB) per topology under each grid condition. Right: topology macro-F1 under each grid condition for ideal-grid and randomised-grid training."
+                    data-badge="Fig. 7"
+                    data-pdf="assets/research/appliance-identification-indian-grid.pdf"
+                    onclick="switchProjectMedia(this)">📊 Fig. 7</button>
+                </div>
+                <div class="media-display-card" onclick="openCertModal('assets/research/paper-page1-preview.png', 'Research Paper — Title Page &amp; Abstract', 'Will Appliance Identification Survive an Indian Grid and a Low-Cost Sensor? — VIT Vellore', 'assets/research/appliance-identification-indian-grid.pdf')">
+                  <div class="media-img-wrap">
+                    <img src="assets/research/paper-page1-preview.png" alt="Research Paper — Appliance Identification on Indian Grid" loading="lazy">
+                    <div class="media-zoom-pill">
+                      <span>🔍</span> <span>Abstract</span>
+                    </div>
+                  </div>
+                  <div class="media-card-footer">
+                    <div class="media-footer-title">
+                      <span>Appliance ID on Indian Grid — Research Paper</span>
+                      <span class="badge badge-brown" style="font-size:.68rem;padding:2px 8px">Co-Author</span>
+                    </div>
+                    <p class="media-footer-desc">Click to read the full paper. Switch tabs to view the system pipeline and grid results figures.</p>
+                    <div class="media-quick-actions">
+                      <span class="text-link" style="color:var(--caramel);font-size:.82rem">Click to enlarge 🔍</span>
+                      <span style="color:var(--muted);font-size:.78rem">·</span>
+                      <a class="text-link" href="assets/research/appliance-identification-indian-grid.pdf" target="_blank" rel="noreferrer" style="font-size:.82rem" onclick="event.stopPropagation()">Download PDF ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Keywords box -->
+              <div class="research-summary-box" style="margin-top: 20px;">
+                <h4>🔑 Keywords</h4>
+                <p style="font-size:.85rem; line-height:1.7">
+                  Non-intrusive load monitoring · Appliance identification · Harmonics · Power quality · Current transformer · Low-cost sensing · PLAID · WHITED · HIFDA
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
